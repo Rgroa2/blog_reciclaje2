@@ -1,0 +1,14 @@
+{% extends "base.html" %}  <!-- Agregando esta linea indicamos que hereda de base.html -->
+
+
+{% block title %} Bienvenido {% endblock %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+        <h1>Hola {{user.username}}</h1>
+    {% else %}
+        <a href="{% url 'sign_up' %">Registrate</a>
+    {% endif %}
+
+{% endblock content %}
